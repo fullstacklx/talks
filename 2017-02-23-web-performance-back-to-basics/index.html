@@ -1,0 +1,477 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>reveal.js – The HTML Presentation Framework</title>
+<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+<meta name="author" content="Hakim El Hattab">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+<!-- Code syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<style>
+.reveal pre {
+  width: auto
+}
+.reveal h1 {
+  font-size: 2em;
+}
+code {
+  background: #111;
+  border-radius: 0.5vh;
+  font-size: 0.9em !important;
+  padding: 0.1em 0.25em !important;
+}
+li[heart] {
+  list-style: none;
+  margin-left: -1em;
+}
+li[heart]::before {
+  content: '♥';
+  margin-right: 0.42em;
+  color: #ee1111;
+}
+li[fail] {
+  list-style: none;
+  margin-left: -1em;
+}
+li[fail]::before {
+  content: '×';
+  font-weight: bold;
+  margin-right: 0.42em;
+}
+heart {
+  display: inline;
+}
+heart::before {
+  content: '♥';
+  color: #ee1111;
+}
+</style>
+
+<div class="reveal">
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+<section>
+  <h1>Front-end performance: Back to basics</h1>
+  <p style="color:gray">Brought to you by a high functioning sociopath</p>
+</section>
+
+<section>
+  <h1>Sup, I'm Fábio</h1>
+  <div style="float: left; width: 50%">
+    <p>Looks like this
+    <img src="fabio.jpg" style="width: 80%">
+    <p style="font-size: 0.5em; color:#aaa;">sometimes
+  </div>
+  <div style="float:left; text-align: left; width: 50%; font-size: 0.8em">
+    <p>&nbsp;</p>
+    <p><a href="http://github.com/fabiosantoscode">github.com/fabiosantoscode</a></p>
+    <p><a href="http://npmjs.com/~fabiosantoscode">npmjs.com/~fabiosantoscode</a></p>
+    <p>Consultant</p>
+    <p>works for <a href="#">yld.io</a></p>
+    <p><heart/> Likes JavaScript</p>
+    <p><heart/> Likes Building compilers</p>
+    <p><heart/> Had the biggest module on npm</p>
+  </div>
+</section>
+
+<section>
+<h1>Why is perf important</h1>
+
+<ul><li>Performance is linked to money</li><li>If your site is faster your employer gets more money</li><li>And then you obviously get a raise</li></ul>
+
+</section><section>
+
+<h1>What am I going to talk about</h1>
+
+<ul><li>Network - how fast does the page load</li><li>Perceived performance</li><li>CPU - does your page crash the browser</li></ul>
+
+</section><section>
+
+<h1>Test test test</h1>
+
+<ul><li>Do not try this at home!</li><li>Until you test and prove that you have a problem</li><li>A lot of performance optimisations mean slower build times and can hurt debugging</li></ul>
+
+</section><section>
+
+<h1>No seriously</h1>
+
+<ul><li>Buy an actual lab coat and actually wear it</li></ul>
+
+<p><img alt="" src="https://imgs.xkcd.com/comics/trimester.png"/>
+<em>(credit: xkcd)</em></p>
+
+</section><section>
+
+<h1>Your mileage may vary</h1>
+
+<p>You have been warned</p>
+
+</section><section>
+
+<h1>Network</h1>
+
+<p><img alt="" src="internet-a-series-of-tubes.jpg"/></p>
+
+</section><section>
+
+<h1>Tools to check you&#39;re using the tubes good</h1>
+
+</section><section>
+
+<h1>Timeliner</h1>
+
+<ul><li>https://www.npmjs.com/timeliner</li><li>Super duper easy</li><li><p>Install it in your CI, keep a history of this output</p><pre><code>fabio@thinkpadlel ♥  timeliner https://www.sapo.pt
+┌──────────────────┬──────────────────┬───────┬───────┐
+│ metric           │ mean             │ min   │ max   │
+├──────────────────┼──────────────────┼───────┼───────┤
+│ render           │ 0.562 (+/-0.018) │ 0.543 │ 0.596 │
+├──────────────────┼──────────────────┼───────┼───────┤
+│ domcontentloaded │ 0.745 (+/-0.020) │ 0.720 │ 0.775 │
+├──────────────────┼──────────────────┼───────┼───────┤
+│ load             │ 2.246 (+/-0.243) │ 1.831 │ 2.480 │
+└──────────────────┴──────────────────┴───────┴───────┘</code></pre></li></ul>
+
+</section><section>
+
+<h1>YSlow</h1>
+
+<ul><li>http://yslow.org/</li><li>Old school browser plugin from yahoo</li><li>Loads your page and checks a bunch of things you may be doing wrong</li></ul>
+
+</section><section>
+
+<h1>Google pagespeed insights</h1>
+
+<ul><li>https://developers.google.com/speed/pagespeed/</li><li>Loads your page</li><li>Checks a bunch of stuff, and gives you a score. Try to beat your competitor&#39;s web sites! &gt;:D</li></ul>
+
+</section><section>
+
+<h1>Chrome debugger</h1>
+
+<ul><li>Nice visualisation of what HTTP requests you&#39;re doing and when</li><li>Screenshots so you know what&#39;s going on as you load several items on the page</li><li>Take care -- don&#39;t optimise for chrome only</li></ul>
+
+</section><section>
+
+<h1>Make good use of the tubes</h1>
+
+<ul><li>You usually have 6 connections</li><li>The browser stop looking when it encounters a &lt;script&gt; tag without the async attribute</li><li>HTTP round trips are expensive</li><li>DNS resolution is expensive</li></ul>
+
+</section><section>
+
+<h1>Minimize requests</h1>
+
+<p>Just say no</p>
+
+<ul><li>And I don&#39;t mean don&#39;t do drugs</li></ul>
+
+</section><section>
+
+<h1>Minimize requests</h1>
+
+<p><img alt="" src="just-say-no.png"/></p>
+
+</section><section>
+
+<h1>Minimize requests</h1>
+
+<ul><li>The first thing you need to consider when you want to make a better use of the tubes</li></ul>
+
+</section><section>
+
+<h1>Caching</h1>
+
+<ul><li>Not all page loads will be the first load <em>(no shit sherlock)</em></li><li>Make sure you use cache headers</li><li>Version your scripts and styles! That way you can make them expire far in the future</li></ul>
+
+</section><section>
+
+<h1>Caching</h1>
+
+<ul><li><p>Or don&#39;t version them. Use a hash.</p><pre><code>&lt;link rel=stylesheet href=/style?hash={{sha1}}&gt;</code></pre></li></ul>
+
+<p><img alt="" src="hashes-are-dope.png"/></p>
+
+</section><section>
+
+<h1>Minimize round trips</h1>
+
+<ul><li>HTTP requests for CSS files, iframes and &lt;script&gt; tags can trigger more HTTP requests!</li><li>But the browser only knows what to fetch when they have been fetched themselves</li></ul>
+
+</section><section>
+
+<h1>Minimize round trips</h1>
+
+<ul><li>Inline on the &lt;head&gt; some parts of your CSS which include files. Font definitions, background image URLs</li><li>Inline the tiniest of images as base64 data:urls</li><li>Consider inlining SVG documents instead of downloading an icon font</li><li>Are you using Tealium? Try to move critical stuff to an actual &lt;script&gt; tag</li><li>Are you using HTTPS? Use HSTS for added security and added perf!</li></ul>
+
+</section><section>
+
+<h1>Use HTTP/2!</h1>
+
+<p><img alt="" src="http-2.png"/></p>
+
+</section><section>
+
+<h1>Use HTTP/2!</h1>
+
+<ul><li>I don&#39;t know much about this. Go learn for yourself 💖</li><li>You won&#39;t worry so much about minimizing requests, but round trips will still be a problematic</li></ul>
+
+</section><section>
+
+<h1>GZIP</h1>
+
+<ul><li>&quot;I ate spam with spam and spam&quot;</li><li>&quot;(#1 means spam)I ate #1 with #1 and #1&quot;</li></ul>
+
+</section><section>
+
+<h1>GZIP</h1>
+
+<ul><li>Make sure you compress your stuff using gzip!</li><li>Remembers substrings you used before in text, repeats them</li><li>Repetitive code becomes smaller</li><li>Turn it off for images, fonts</li></ul>
+
+</section><section>
+
+<h1>Minify your ugly code!</h1>
+
+<ul><li>cssmin, uglifyjs, html minifiers (or just using react)</li><li>May not be worth it if the files are too small. Save your developer time!</li><li>For CSS, try to get rid of CSS prefixes. It&#39;s not funny anymore guys.</li></ul>
+
+</section><section>
+
+<h1>Start loading stuff as soon as possible</h1>
+
+<p><img alt="" src="pipeline-1.png"/></p>
+
+</section><section>
+
+<h1>Start loading stuff as soon as possible</h1>
+
+<p><img alt="" src="pipeline-2.png"/></p>
+
+</section><section>
+
+<h1>Putting stuff in the <code>&lt;head&gt;</code></h1>
+
+<p>You can use this to</p>
+
+<ul><li>minimize requests</li><li>start loading stuff earlier</li><li>minimize round trips</li></ul>
+
+</section><section>
+
+<h1>Putting stuff in the <code>&lt;head&gt;</code></h1>
+
+<ul><li>Don&#39;t forget that the first 1 or 2 images will occupy a place in the pipeline</li><li>Is your CSS small? Put it all there!</li><li>You may have been told to put all script tags in the footer, but these days you have the <code>async</code> attribute</li></ul>
+
+</section><section>
+
+<h1>Don&#39;t block the render</h1>
+
+<ul><li>The page won&#39;t render until the browser has fetched the stylesheet and all fonts you use</li><li>Inline that stuff if you have to -- or use critical CSS</li><li>DO NOT put any synchronous tags (&lt;script&gt; without async) there, if you have any sync script tags consider inlining them</li></ul>
+
+</section><section>
+
+<h1>Perceived performance</h1>
+
+<p><img alt="" src="perceived-performance.png"/></p>
+
+</section><section>
+
+<h1>Perceived performance</h1>
+
+<ul><li>If your user thinks you&#39;re fast, you don&#39;t have to be fast</li></ul>
+
+</section><section>
+
+<h1>How to improve perceived performance?</h1>
+
+<ul><li>Show <em>something</em> as soon as you can</li><li>It&#39;s okay to show your page before the fonts load. The user&#39;s chicken brain can get used to the layout</li><li>If you have a UI change triggered by an interaction, try to get the basic colors and shapes on screen in under 100ms</li></ul>
+
+</section><section>
+
+<h1>CPU</h1>
+
+<p><img alt="" src="cpu.png"/></p>
+
+</section><section>
+
+<h1>CPU</h1>
+
+<ul><li>Computers have CPUs</li><li>Mobile phones have super weak CPUs</li><li>Don&#39;t crash firefox on my quad core please</li></ul>
+
+</section><section>
+
+<h1>Chrome and firefox debuggers</h1>
+
+<ul><li>Find out if you&#39;re allocating objects in tight loops</li><li>Find out when reflows happen</li></ul>
+
+</section><section>
+
+<h1>jsPerf</h1>
+
+<ul><li>https://jsperf.com/</li><li>Create small test cases and test them across browsers</li><li>Don&#39;t micro-benchmark! Try to use it for DOM stuff only</li></ul>
+
+</section><section>
+
+<h1>CSS triggers</h1>
+
+<ul><li>https://csstriggers.com/</li><li>Lists what CSS properties will cause a reflow</li></ul>
+
+</section><section>
+
+<h1>How to use less CPU</h1>
+
+<ul><li>Do less stuff!</li></ul>
+
+</section><section>
+
+<h1>Avoid unnecessary abstractions</h1>
+
+<p><img alt="" src="can-of-worms.png"/></p>
+
+</section><section>
+
+<h1>Avoid unnecessary abstractions</h1>
+
+<ul><li>Using React may be good for working on a complex page, but is its overhead welcome in a tiny iframe-based app?</li><li>Do you need to download React just for a dropdown menu, or can you just render the HTML on the server?</li><li>Do you really need a templating engine or can you just update DOM elements one by one?</li></ul>
+
+</section><section>
+
+<h1>The DOM isn&#39;t as slow as you think</h1>
+
+<ul><li>https://github.com/patrick-steele-idem/morphdom#benchmarks</li></ul>
+
+</section><section>
+
+<h1>What&#39;s really really slow</h1>
+
+</section><section>
+
+<h1>And I mean slow</h1>
+
+</section><section>
+
+<h1>Are reflows</h1>
+
+</section><section>
+
+<h1>What&#39;s a reflow?</h1>
+
+<ul><li>A reflow is what occurs when the browser has to recalculate the page&#39;s layout. That is, what elements go where, and what their sizes are, and how the lines of text flow.</li></ul>
+
+</section><section>
+
+<h1>Why are reflows bad?</h1>
+
+<ul><li>Reflows are slow. If you have too many reflows, your site won&#39;t be fast, and you won&#39;t get a raise!</li><li>When a reflow happens, a kitten dies somewhere, and Donald trump signs an executive order</li></ul>
+
+</section><section>
+
+<h1>The browser&#39;s loop</h1>
+
+<p><img alt="" src="browser-loop.png"/></p>
+
+</section><section>
+
+<h1>Avoiding reflows</h1>
+
+<ul><li>Never animate anything at all. Convince your employer that it&#39;s ugly and useless</li></ul>
+
+</section><section>
+
+<h1>Avoiding reflows</h1>
+
+<ul><li>Check out this comprehensive gist by Paul Irish</li><li>https://gist.github.com/paulirish/5d52fb081b3570c81e3a</li></ul>
+
+</section><section>
+
+<h1>Avoiding reflows</h1>
+
+<ul><li>Learn about layout boundaries</li><li>http://wilsonpage.co.uk/introducing-layout-boundaries/</li></ul>
+
+</section><section>
+
+<h1>Avoiding reflows</h1>
+
+<ul><li>When you hide the scrollbar for some reason, change the width of the container</li></ul>
+
+</section><section>
+
+<h1>Avoiding reflows</h1>
+
+<ul><li>Mitigate your reflows by having a smaller DOM</li></ul>
+
+</section><section>
+
+<h1>Avoiding reflows</h1>
+
+<ul><li>Go to csstriggers.com before you do any kind of animation or interaction that changes the DOM</li><li>Change classnames deep in the DOM tree. (haven&#39;t tried it myself)</li></ul>
+
+</section><section>
+
+<h1>Avoiding reflows</h1>
+
+<ul><li><p>Batch your reads and writes. First change everything, then measure everything</p><pre><code>  element1.style.width = &#39;50%&#39;;
+  element2.style.width = &#39;50%&#39;;
+  doSomething(element1.offsetWidth);  // reflow!
+  element3.style.width = &#39;50%&#39;;
+  doSomething(element3.offsetWidth);  // reflow!</code></pre></li></ul>
+
+</section><section>
+
+<h1>Conclusion</h1>
+
+<ul><li>We&#39;ve looked at network, perceived performance and CPU</li><li>There&#39;s lots more so get learning</li><li>Don&#39;t believe what you think, or what an entire community likes to believe. Check for yourself</li></ul>
+</section>
+<section>
+  <h2>The end.</h2>
+  <p>Questions?</p>
+  <p style=color:gray;font-size:0.5em;position:absolute;right:0>deftones is crap</p>
+</section>
+
+</div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available at:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+  controls: true,
+  progress: true,
+  history: true,
+  center: true,
+
+  transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+  // Optional reveal.js plugins
+  dependencies: [
+    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'plugin/zoom-js/zoom.js', async: true },
+    { src: 'plugin/notes/notes.js', async: true }
+  ]
+});
+document.addEventListener('DOMContentLoaded', () => {
+  [].forEach.call(document.querySelectorAll('pre code'), element => {
+    element.contentEditable = true
+  })
+})
+</script>
