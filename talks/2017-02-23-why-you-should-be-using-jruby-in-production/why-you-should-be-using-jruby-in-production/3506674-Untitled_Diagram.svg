@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="240.5" height="61" version="1.1" id="svg2" inkscape:version="0.91 r13725" sodipodi:docname="Untitled Diagram.svg" viewBox="0 0 240.5 61">
+  <metadata id="metadata56">
+    <rdf:rdf>
+      <cc:work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+        <dc:title></dc:title>
+      </cc:work>
+    </rdf:rdf>
+  </metadata>
+  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="960" inkscape:window-height="665" id="namedview54" showgrid="false" fit-margin-top="0" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0" inkscape:zoom="1.059761" inkscape:cx="115" inkscape:cy="30.5" inkscape:window-x="57" inkscape:window-y="26" inkscape:window-maximized="0" inkscape:current-layer="svg2"></sodipodi:namedview>
+  <defs id="defs4"></defs>
+  <path style="fill:none;stroke:#000000;stroke-miterlimit:10" inkscape:connector-curvature="0" id="path8" pointer-events="none" stroke-miterlimit="10" d="m 120,15.5 43.63,0"></path>
+  <path style="fill:#000000;stroke:#000000;stroke-miterlimit:10" inkscape:connector-curvature="0" id="path10" pointer-events="none" stroke-miterlimit="10" d="m 168.88,15.5 -7,3.5 1.75,-3.5 -1.75,-3.5 z"></path>
+  <path style="fill:none;stroke:#000000;stroke-miterlimit:10" inkscape:connector-curvature="0" id="path12" pointer-events="none" stroke-miterlimit="10" d="m 120,30.5 43.63,0"></path>
+  <path style="fill:#000000;stroke:#000000;stroke-miterlimit:10" inkscape:connector-curvature="0" id="path14" pointer-events="none" stroke-miterlimit="10" d="m 168.88,30.5 -7,3.5 1.75,-3.5 -1.75,-3.5 z"></path>
+  <path style="fill:none;stroke:#000000;stroke-miterlimit:10" inkscape:connector-curvature="0" id="path16" pointer-events="none" stroke-miterlimit="10" d="m 120,45.5 43.63,0"></path>
+  <path style="fill:#000000;stroke:#000000;stroke-miterlimit:10" inkscape:connector-curvature="0" id="path18" pointer-events="none" stroke-miterlimit="10" d="m 168.88,45.5 -7,3.5 1.75,-3.5 -1.75,-3.5 z"></path>
+  <rect style="fill:#ffffff;stroke:#000000" id="rect20" pointer-events="none" height="60" width="70" y="0.5" x="50"></rect>
+  <rect style="fill:#ffffff;stroke:#000000" id="rect28" pointer-events="none" height="60" width="70" y="0.5" x="170"></rect>
+  <path style="fill:none;stroke:#000000;stroke-miterlimit:10" inkscape:connector-curvature="0" id="path36" pointer-events="none" stroke-miterlimit="10" d="m 0,15.5 43.63,0"></path>
+  <path style="fill:#000000;stroke:#000000;stroke-miterlimit:10" inkscape:connector-curvature="0" id="path38" pointer-events="none" stroke-miterlimit="10" d="m 48.88,15.5 -7,3.5 1.75,-3.5 -1.75,-3.5 z"></path>
+  <path style="fill:none;stroke:#000000;stroke-miterlimit:10" inkscape:connector-curvature="0" id="path40" pointer-events="none" stroke-miterlimit="10" d="m 0,30.5 43.63,0"></path>
+  <path style="fill:#000000;stroke:#000000;stroke-miterlimit:10" inkscape:connector-curvature="0" id="path42" pointer-events="none" stroke-miterlimit="10" d="m 48.88,30.5 -7,3.5 1.75,-3.5 -1.75,-3.5 z"></path>
+  <path style="fill:none;stroke:#000000;stroke-miterlimit:10" inkscape:connector-curvature="0" id="path44" pointer-events="none" stroke-miterlimit="10" d="m 0,45.5 43.63,0"></path>
+  <path style="fill:#000000;stroke:#000000;stroke-miterlimit:10" inkscape:connector-curvature="0" id="path46" pointer-events="none" stroke-miterlimit="10" d="m 48.88,45.5 -7,3.5 1.75,-3.5 -1.75,-3.5 z"></path>
+</svg>

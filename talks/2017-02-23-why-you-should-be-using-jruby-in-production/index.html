@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+	<html class="sl-root decks export offline loaded">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Why you should be using JRuby in production: Slides</title>
+		<meta name="description" content="Slides">
+
+		<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+
+
+
+	</head>
+	<body class="reveal-viewport theme-font-overpass2 theme-color-beige-brown">
+		<div class="reveal">
+			<div class="slides">
+				<section data-id="4e2c8119a99b9ccbf83344694df1eccd"><div class="sl-block" data-block-type="text" style="width: 918px; left: 21px; top: 92px; height: auto;" data-block-id="5db851b04bfcfb70e4c9596e2361405b"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; font-size: 150%;">
+<h1 style="text-align:left">why<br>
+you should<br>
+be using<br>
+<span style="color:#FF0000"><span style="font-size:1.4em">JRuby</span></span><br>
+in PRODUCTION</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 360px; height: 360px; left: 600px; top: 170px;" data-block-id="2928d7fb099864982072493bd810682e"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1200" data-natural-height="1200" data-src="why-you-should-be-using-jruby-in-production/3455545-jruby-logo-standard-logo-stroke-large.png"></div></div></section><section data-id="f9224b89d142d4ad2661447d6955c170"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="8f88beeea56540a194c88b9e42e3fdf7"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>who am i</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 179px; height: auto;" data-block-id="fb2b3d5603ddb710e2238186e9ef1f51"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui" data-fragment-index="0">
+<h2>IVO anjo</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 119px; top: 280px; height: auto;" data-block-id="93e0b4aa182d2d902c864fb45b9afbe5"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%; text-align: left;" dir="ui" data-fragment-index="1">
+<h2>Ruby <span style="color:#FF0000">❤</span>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 119px; top: 350px; height: auto;" data-block-id="8cebd43f66f4a34054516c3cd9ad5f22"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 13; font-size: 150%; text-align: left;" dir="ui" data-fragment-index="2">
+<h2>CONCURRENCY <span style="color:#FF0000">❤</span>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 86px; left: 575px; top: 256px; height: auto;" data-block-id="40bff192a2ef29e1bce9a890d4843b82"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 14; font-size: 130%;" dir="ui" data-fragment-index="3">
+<p><span style="font-size:4.0em">}</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 377px; left: 575px; top: 319px; height: auto;" data-block-id="664abfdc579fad9210c3078b13eb08c4"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 16; font-size: 150%;" dir="ui" data-fragment-index="3">
+<h2>JRuby <span style="color:#FF0000">❤</span>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 560px; height: auto;" data-block-id="01bf776a66add2fb09611b8fc3f7b748"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 17; font-size: 150%;" dir="ui" data-fragment-index="5">
+<pre style="text-align: center;"><strong>@knux</strong></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 490px; height: auto;" data-block-id="bbe148c91c22af134090ce2d481f10de"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 18; font-size: 150%;" dir="ui" data-fragment-index="4">
+<pre style="text-align:center">{talkdesk_ruby_ninja: self}</pre>
+</div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 80px; height: 70px; left: 320px; top: 550px;" data-block-id="20793346b234dfa8b290e088797c1adf"><div class="sl-block-content fragment" data-shape-type="symbol-twitter" data-shape-fill-color="#000000" data-shape-stretch="true" style="z-index: 19;" data-fragment-index="5"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 3 32 26"><g class="shape-element" fill="#000000"><path d="M32 6.076c-1.177 0.522-2.443 0.875-3.771 1.034 1.355-0.813 2.396-2.099 2.887-3.632-1.269 0.752-2.674 1.299-4.169 1.593-1.198-1.276-2.904-2.073-4.792-2.073-3.626 0-6.565 2.939-6.565 6.565 0 0.515 0.058 1.016 0.17 1.496-5.456-0.274-10.294-2.888-13.532-6.86-0.565 0.97-0.889 2.097-0.889 3.301 0 2.278 1.159 4.287 2.921 5.465-1.076-0.034-2.088-0.329-2.974-0.821-0.001 0.027-0.001 0.055-0.001 0.083 0 3.181 2.263 5.834 5.266 6.437-0.551 0.15-1.131 0.23-1.73 0.23-0.423 0-0.834-0.041-1.235-0.118 0.835 2.608 3.26 4.506 6.133 4.559-2.247 1.761-5.078 2.81-8.154 2.81-0.53 0-1.052-0.031-1.566-0.092 2.905 1.863 6.356 2.95 10.064 2.95 12.076 0 18.679-10.004 18.679-18.68 0-0.285-0.006-0.568-0.019-0.849 1.283-0.926 2.396-2.082 3.276-3.398z"></path></g></svg></div></div></section><section data-id="252c2fd64c35274be71688b681dcd1fc"><div class="sl-block" data-block-type="text" style="width: 444px; left: 258px; top: 302px; height: auto;" data-block-id="66a124457b496368f37be68a4c815257"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>jruby?</h1>
+</div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 127px; height: 177px; left: 633px; top: 453px;" data-block-id="75aed8503ba499509e1abc632410700d"><div class="sl-block-content fragment" data-shape-type="triangle-left" data-shape-fill-color="#000000" data-shape-stretch="true" style="z-index: 11;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 127 177"><polygon points="0,88.5 127,0 127,177" class="shape-element" fill="#000000"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 127px; height: 177px; left: 753px; top: 453px;" data-block-id="80b3113be61848653363bbb10041cc2e"><div class="sl-block-content fragment" data-shape-type="triangle-left" data-shape-fill-color="#000000" data-shape-stretch="true" style="z-index: 13;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 127 177"><polygon points="0,88.5 127,0 127,177" class="shape-element" fill="#000000"></polygon></svg></div></div></section><section data-id="355d3041860d1c691e2735d2e3c2a814"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="b2009cb9a869c1480abbe71d583cf6f8"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>who am i</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 179px; height: auto;" data-block-id="e4b61c3c0a5e3a50ecf591e09c81c7dc"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>IVO anjo</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 119px; top: 280px; height: auto;" data-block-id="bbebda8866b7a683f13fb83cc636c782"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%; text-align: left;" dir="ui">
+<h2>Ruby <span style="color:#FF0000">❤</span>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 119px; top: 350px; height: auto;" data-block-id="04b743f1c4d44d054306d8c7594a5134"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 13; font-size: 150%; text-align: left;" dir="ui">
+<h2>CONCURRENCY <span style="color:#FF0000">❤</span>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 86px; left: 575px; top: 256px; height: auto;" data-block-id="21a78151a33406a8fa88d251d3a6b8e1"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 14; font-size: 130%;" dir="ui">
+<p><span style="font-size:4.0em">}</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 377px; left: 575px; top: 319px; height: auto;" data-block-id="56dd8978dc88a9e687df76ebbc3bd915"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 15; font-size: 150%;" dir="ui">
+<h2>JRuby <span style="color:#FF0000">❤</span>
+</h2>
+</div></div>
+
+
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 127px; height: 177px; left: 633px; top: 453px;" data-block-id="f016efac50d70aef271eaabbde1d39ca"><div class="sl-block-content" data-shape-type="triangle-left" data-shape-fill-color="#000000" data-shape-stretch="true" style="z-index: 21;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 127 177"><polygon points="0,88.5 127,0 127,177" class="shape-element" fill="#000000"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 127px; height: 177px; left: 753px; top: 453px;" data-block-id="37146ece619b7614e098a1af0cc46bb7"><div class="sl-block-content" data-shape-type="triangle-left" data-shape-fill-color="#000000" data-shape-stretch="true" style="z-index: 18;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 127 177"><polygon points="0,88.5 127,0 127,177" class="shape-element" fill="#000000"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 560px; height: auto;" data-block-id="a25e3d6ab5d27084660853a3a4e2c8b1"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 16; font-size: 150%;" dir="ui">
+<pre style="text-align: center;"><strong>@knux</strong></pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 490px; height: auto;" data-block-id="66e2a587d2792fa2337140a7b15671a8"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 17; font-size: 150%;" dir="ui">
+<pre style="text-align:center">{talkdesk_ruby_ninja: self}</pre>
+</div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 80px; height: 70px; left: 320px; top: 550px;" data-block-id="0c42b83e47def2dca2bdb64722fc104b"><div class="sl-block-content" data-shape-type="symbol-twitter" data-shape-fill-color="#000000" data-shape-stretch="true" style="z-index: 19;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 3 32 26"><g class="shape-element" fill="#000000"><path d="M32 6.076c-1.177 0.522-2.443 0.875-3.771 1.034 1.355-0.813 2.396-2.099 2.887-3.632-1.269 0.752-2.674 1.299-4.169 1.593-1.198-1.276-2.904-2.073-4.792-2.073-3.626 0-6.565 2.939-6.565 6.565 0 0.515 0.058 1.016 0.17 1.496-5.456-0.274-10.294-2.888-13.532-6.86-0.565 0.97-0.889 2.097-0.889 3.301 0 2.278 1.159 4.287 2.921 5.465-1.076-0.034-2.088-0.329-2.974-0.821-0.001 0.027-0.001 0.055-0.001 0.083 0 3.181 2.263 5.834 5.266 6.437-0.551 0.15-1.131 0.23-1.73 0.23-0.423 0-0.834-0.041-1.235-0.118 0.835 2.608 3.26 4.506 6.133 4.559-2.247 1.761-5.078 2.81-8.154 2.81-0.53 0-1.052-0.031-1.566-0.092 2.905 1.863 6.356 2.95 10.064 2.95 12.076 0 18.679-10.004 18.679-18.68 0-0.285-0.006-0.568-0.019-0.849 1.283-0.926 2.396-2.082 3.276-3.398z"></path></g></svg></div></div></section><section data-id="ac9f41cb9cd82129bf9173d3b846b96a"><div class="sl-block" data-block-type="text" style="width: 918px; left: 21px; top: 92px; height: auto;" data-block-id="f181a7dc30b9cc993b9c1c01b4ba9016"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; font-size: 150%;">
+<h1 style="text-align:left">why<br>
+you should<br>
+be using<br>
+<span style="color:#FF0000"><span style="font-size:1.4em">  Ruby</span></span><br>
+in PRODUCTION</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 292px; height: 292px; left: 654px; top: 198px;" data-block-id="447f74d2cba92f4e76c1a0012249e39d"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="995" data-natural-height="996" data-src="why-you-should-be-using-jruby-in-production/3493811-ruby.png"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 403px; height: 216px; left: 21px; top: 312px;" data-block-id="acd9cc26d5322fa5a5d2dfdd1a9319c9"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="69" data-natural-height="37" data-src="why-you-should-be-using-jruby-in-production/3493809-export.svg"></div></div></section><section data-id="6c5431fc3d4e018a6c6f6993ae749189"><div class="sl-block" data-block-type="text" style="width: 825px; left: 68px; top: 287px; height: auto;" data-block-id="c7b43253b922ccd69b389b269e1e753d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 10; font-size: 150%;" dir="ui">
+<h2>MINSWAN<br>
+matz is nice so we are nice</h2>
+</div></div></section><section data-id="2b7ccdb0ecee92a694175cd738be65eb"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 140px; height: auto;" data-block-id="e0895b25db489c6086d29e5ff1702c6b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 10; font-size: 150%;" dir="ui">
+<h2>expressive</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 210px; height: auto;" data-block-id="c4a840638479eec801e02e0c35a57a98"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui" data-fragment-index="0">
+<h2>duck typing</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 280px; height: auto;" data-block-id="b72c9d25d4d8f63c9bb19603d3ffd403"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui" data-fragment-index="1">
+<h2>everything is an object</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 350px; height: auto;" data-block-id="676e1c9d5e475b2447f2c643fae00014"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 13; font-size: 150%;" dir="ui" data-fragment-index="2">
+<h2>easy to write dslₛ</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 420px; height: auto;" data-block-id="455f00aee52106acbeb785914e3fbf8f"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 14; font-size: 150%;" dir="ui" data-fragment-index="3">
+<h2>less boilerplate</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 490px; height: auto;" data-block-id="976ffe63fb9adbd31c6738ee8920b3d8"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 16; font-size: 150%;" dir="ui" data-fragment-index="4">
+<h2>awesome pry repl</h2>
+</div></div></section><section data-id="7288f52751938829345855e97f7d796f"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 140px; height: auto;" data-block-id="9e56ef4814df992c561736002fb4b757"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>awesome web libraries</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 280px; height: auto;" data-block-id="77aa550d067a10922dd22af481cf121b"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui" data-fragment-index="0">
+<h2>RAILS</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 350px; height: auto;" data-block-id="0971ccded0941c4165446c85828133ee"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 13; font-size: 150%;" dir="ui" data-fragment-index="1">
+<h2>NOT RAILS: GRAPE, RODA, HANAMI</h2>
+</div></div></section><section data-id="ec05785cb675b74a08f602ba97a230cd"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 140px; height: auto;" data-block-id="acfb55c074ccb8419604bd7234715578"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 10; font-size: 150%;" dir="ui">
+<h2>awesome testing libraries</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 280px; height: auto;" data-block-id="e4d09dcff2963e3ab6b368b56f7ce3b3"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui" data-fragment-index="0">
+<h2>RSPEC</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 350px; height: auto;" data-block-id="9c7eacef4fb8a0331db15d6943a98f46"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui" data-fragment-index="0">
+<h2>cucumber</h2>
+</div></div></section><section data-id="382cf625a9e7c21d741cec38c0c1483e"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 140px; height: auto;" data-block-id="762e2e5ba08f0765069333977b25fd47"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 10; font-size: 150%;" dir="ui">
+<h2>awesome * libraries</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 280px; height: auto;" data-block-id="8dc3e30ae29dcd60982e30bfb3f9cd6d"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui" data-fragment-index="0">
+<h2>data stores</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 350px; height: auto;" data-block-id="bc0b904dc5aa38e15c0b7a19273ade6b"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui" data-fragment-index="1">
+<h2>apis</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 599px; height: auto;" data-block-id="cd307f4e18c5f2081ea227c6dfb986c7"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 13; font-size: 150%;" dir="ui" data-fragment-index="4">
+<h2>“There's a gem for that”</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 420px; height: auto;" data-block-id="53de3968e3e5578fe90433845c0cc954"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 14; font-size: 150%;" dir="ui" data-fragment-index="2">
+<h2>* server</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 490px; height: auto;" data-block-id="8afc70fd1eea0b72211b5d3691e592f2"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 16; font-size: 150%;" dir="ui" data-fragment-index="3">
+<h2>* PROTOCOL</h2>
+</div></div></section><section data-id="e9f70f5617750bf7194aa2fae26b1458"><div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 511px; height: 432px; left: 225px; top: 134px;" data-block-id="4d922c32b876d4013691edcbe3b228b9"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="286" data-natural-height="242" data-src="why-you-should-be-using-jruby-in-production/3517377-the.foxes-4e.png"></div></div></section><section data-id="3048ec0888d65a371496dadfb10d68b7"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="5034d507410b74eda12e1b57672680b3"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>SO... JRUBY?</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 319px; height: auto;" data-block-id="1d13c41952f15011bbb0773b7f27d469"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui" data-fragment-index="0">
+<h2>ruby on top of the java vm</h2>
+</div></div></section><section data-id="30863aa5e8cf6efe65b958c16dc8a692"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="5ac63e0b531b20673bedc38d90aa9a9f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>SO... JRUBY?</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 210px; height: auto;" data-block-id="294655552f1fdbdb6811b4ba8ff637ce"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>WHy #1: PERFORMANCE</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 350px; height: auto;" data-block-id="31dd8d8a339210649abc7df8b8ed7dbd"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui" data-fragment-index="0">
+<h2>JIT COMPILER</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 420px; height: auto;" data-block-id="838b873ac5598bec9b606a40556d8cdb"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 14; font-size: 150%;" dir="ui" data-fragment-index="1">
+<h2>STATE-of-THE-ART GC</h2>
+</div></div></section><section data-id="dd778447ad3fcb1ab9a7818c708de375"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="30061daf96cd193a9c8238f64b9ab79a"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>SO... JRUBY?</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 210px; height: auto;" data-block-id="8e5e99ae64304f717a6f3d3d014e83cb"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>WHy #2: MASSIVELY PARALLEL</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 350px; height: auto;" data-block-id="2840dea989e76306ebdea8d542cda637"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui" data-fragment-index="0">
+<h2>UNLEASH THE THREADS</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 420px; height: auto;" data-block-id="b8f86b3596486dcf8d29793643e94a36"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 13; font-size: 150%;" dir="ui" data-fragment-index="1">
+<h2>...AND THE ASYNC WORK</h2>
+</div></div></section><section data-id="c46ceb688e4972c7515e6cf663a8c368"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="6e239ffb5cf8c581af3f5a3b467add82"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>SO... JRUBY?</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 210px; height: auto;" data-block-id="b9c87f6d0083fa6709e6c91e1953471a"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>WHy #3: TROUBLESHOOTING</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 350px; height: auto;" data-block-id="6c484a6abb57930211250cb1b41d998b"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui" data-fragment-index="0">
+<h2>USE AWESOME JAVA TOOLING</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 394px; left: 80px; top: 428px; height: auto;" data-block-id="8efd638e30cd0ad2d09514a76ad87c2c"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 14; font-size: 150%;" dir="ui" data-fragment-index="1">
+<h2 style="text-align: left;">• PROFILERS<br>
+• MONITORING<br>
+• DEBUGGERS</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 86px; left: 444px; top: 408px; height: auto;" data-block-id="0f31ea2cc0a5e9b3d9773bd761729694"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 15; font-size: 161%;" dir="ui" data-fragment-index="2">
+<p><span style="font-size:4.0em">}</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 467px; left: 504px; top: 490px; height: auto;" data-block-id="ba23d1a493f494e5175da681dda32a9f"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 16; font-size: 150%;" dir="ui" data-fragment-index="2">
+<h2>IN PRODUCTION!</h2>
+</div></div></section><section data-id="45a0619930bd7725d9fe1929c9d2e832"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="e8f43cc6b677f3f1148cc8e9b2d2381d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; font-size: 150%;">
+<h1>SO... JRUBY?</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 210px; height: auto;" data-block-id="420519f0ca53f1aaa8b8bdd178324bfe"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui">
+<h2>WHy #4: EASY TO DEPLOY</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 885px; left: 38px; top: 350px; height: auto;" data-block-id="0b96fefb2c618d4010e3d79039d5ab05"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 13; font-size: 150%;" dir="ui" data-fragment-index="0">
+<h2>RUBY TOOLING OR JAVA TOOLING</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 360px; height: 104px; left: 80px; top: 458px;" data-block-id="5812b8d8e9e5f5db27d3da3f5b51a24e"><div class="sl-block-content fragment" style="z-index: 15;" data-fragment-index="0"><img style="" data-natural-width="419" data-natural-height="121" data-src="why-you-should-be-using-jruby-in-production/3457775-puma-logo-large.png"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 360px; height: 179px; left: 520px; top: 420px;" data-block-id="41a59b8cae4e258c54b76a022fb29efa"><div class="sl-block-content fragment" style="z-index: 16;" data-fragment-index="0"><img style="" data-natural-width="600" data-natural-height="299" data-src="why-you-should-be-using-jruby-in-production/3493836-netty_logo_600px.gif"></div></div></section><section data-id="44e90a51ba5449e3de15776516bcf592"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="91b1ca0298f9b52ba8bfd3f777dbefea"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>SO... JRUBY?</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 210px; height: auto;" data-block-id="8ddb46abd4a1e28457fc7e8d2c7334c9"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>WHy #4½: EASY TO DEPLOY</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 350px; height: auto;" data-block-id="8dbcd3366c79e055a66d62046c866667"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui" data-fragment-index="0">
+<h2>DEPLOY AS RUBY SOURCES</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 866px; left: 47px; top: 420px; height: auto;" data-block-id="a14260efa87fb1e2f47eca18e29c0048"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 14; font-size: 150%;" dir="ui" data-fragment-index="1">
+<h2>OR DEPLOY AS SINGLE .JAR/.WAR</h2>
+</div></div></section><section data-id="5b815d695fea856e119bb91bc0b55526"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="7bc105e95de08680aafcf95738b4cab9"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>HOW hard is it to start using?</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 350px; height: auto;" data-block-id="ed40de2a742671fde678127e0a09497a"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui" data-fragment-index="0">
+<h2 style="text-align:left">$ rvm install jruby-9.1.7.0<br>
+$ rvm USE jruby-9.1.7.0<br>
+$ GEM INSTALL BUNDLER<br>
+$ BUNDLE INSTALL</h2>
+</div></div></section><section data-id="f04448c3ab7e289bc872e31719511573">
+
+
+
+<div class="sl-block" data-block-type="image" style="width: 960px; height: 195px; left: 0px; top: 280px;" data-block-id="370e3d6db69336b34820f52d9dd9d52c"><div class="sl-block-content fragment" style="z-index: 10;" data-fragment-index="0"><img style="" data-natural-width="1076" data-natural-height="219" data-src="why-you-should-be-using-jruby-in-production/3507376-main-port.png"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 22px; height: auto;" data-block-id="92ad3bbab2259186726cc94009b8c947"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>SPENT A FEW MINUTES PORTING TALKDESK's RAILS MONOLITH</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 560px; height: auto;" data-block-id="58a2a6531f2f75c92cc374985483d04d"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 13; font-size: 150%;" dir="ui" data-fragment-index="0">
+<pre>1635 examples, 19 failures, 41 pending</pre>
+</div></div></section><section data-id="5cec51744f9200691174f604563de853">
+
+
+
+<div class="sl-block" data-block-type="image" style="width: 960px; height: 195px; left: 0px; top: 280px;" data-block-id="40484abc678af87140550648063e6d25"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1076" data-natural-height="219" data-src="why-you-should-be-using-jruby-in-production/3507376-main-port.png"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 22px; height: auto;" data-block-id="61cc40b44b28fe6d927661cbc87e4add"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>SPENT A FEW MINUTES PORTING TALKDESK's RAILS MONOLITH</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 533px; height: auto;" data-block-id="bf8c90162ed7381e20eae407f1c1aa37"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 14; font-size: 150%;" dir="ui">
+<h2>AUTHENTICATE, PLACE &amp; LIST CALLS, ACCESS SETTINGS, ETC.</h2>
+</div></div></section><section data-id="88d9f0d555c571f0e3302f3fb8dde1bd"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="8ccf03062ee76461963c5422e46aab16"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>going cold-turkey is a big step</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 420px; height: auto;" data-block-id="e86dde944158bbaa67bd7e3e791467ef"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui" data-fragment-index="0">
+<h2>i still recommend you carefully validate your app :)</h2>
+</div></div></section><section data-id="7170cd8466d5096ced825ce9bde9465c"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="b5dcc732f78affd64fd1cb9c96872429"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; font-size: 150%;">
+<h1>
+<span class="_Tgc">“</span>thread carefully<span class="_Tgc">”</span>?</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 619px; height: 464px; left: 171px; top: 235px;" data-block-id="56046b9229ee07cd8f92abb7095148cf"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="600" data-natural-height="450" data-src="why-you-should-be-using-jruby-in-production/3493861-your-joke-was.jpg"></div></div></section><section data-id="23b499a92c81335587bcfd1a8567be15"><div class="sl-block" data-block-type="text" style="width: 918px; left: 21px; top: 207px; height: auto;" data-block-id="9efd991d050de96c4a27cd1e8c2661f6"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1 style="text-align:left">tales<br>
+from the<br>
+trenches</h1>
+</div></div></section><section data-id="00f6c9c4ec8877ded4cdf8e118d1ed9a"><div class="sl-block" data-block-type="text" style="width: 846px; left: 57px; top: 44px; height: auto;" data-block-id="1eca943a8e04dfa41d6204e51122f89f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; font-size: 150%;" dir="ui">
+<h1>contacts importer</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 189px; left: 728px; top: 296px; height: auto;" data-block-id="53ce88fac75f75ce12d2a4c8be179045"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui">
+<p><strong>Contacts<br>
+API</strong></p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 685px; height: 173px; left: 240px; top: 264px;" data-block-id="cc21a8ff310613e453a52bc56b88a2eb"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="241" data-natural-height="61" data-src="why-you-should-be-using-jruby-in-production/3506674-Untitled_Diagram.svg"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 189px; left: 388px; top: 296px; height: auto;" data-block-id="dc32d1bec7a3ef42f5cbe0339c922cdc"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 13; font-size: 150%;" dir="ui">
+<p><strong>Contacts<br>
+Importer</strong></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 223px; left: 40px; top: 224px; height: auto;" data-block-id="051bb8f5a6983a559a72bc9b5d140c4b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 14; font-size: 150%;" dir="ui">
+<p><strong>Salesforce</strong></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 223px; left: 10px; top: 290px; height: auto;" data-block-id="5bf8c5553c51ee4f4bca1bf30886d95f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 15; font-size: 150%;" dir="ui">
+<p><strong>Zendesk</strong></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 203px; left: 35px; top: 356px; height: auto;" data-block-id="11acc4a4ee9c462c502e61ba97f7e35e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 16; font-size: 150%;" dir="ui">
+<p><strong>Google</strong></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 203px; left: 82px; top: 422px; height: auto;" data-block-id="c5a753ae0c772c3a5b7487a8088c03ab"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 18; font-size: 150%;" dir="ui">
+<p><strong>NSA</strong></p>
+</div></div></section><section data-id="753ed87042215ef85c063da03ca16f21"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="dc9b9c06559f772cf131d6a5f3d5939e"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>v0: unleash the threads</h1>
+</div></div>
+
+
+
+
+
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 904px; height: 478px; left: 28px; top: 222px;" data-block-id="23749f96e3fdefb3412cbcc83ecd19ea"><div class="sl-block-content fragment" style="z-index: 11;" data-fragment-index="0"><img style="" data-natural-width="658" data-natural-height="348" data-src="why-you-should-be-using-jruby-in-production/3506720-glorious-htop-v3.gif"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 829px; left: 66px; top: 222px;" data-block-id="859c2e04a0bb86efe23223ca902307ca"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(255, 0, 0); font-size: 333%;" data-fragment-index="1">
+<p><span style="font-size:5.0em"><strong>???</strong></span></p>
+</div></div></section><section data-id="d26e0ae372d8829dfb1c061e962413a4">
+
+
+
+
+
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 948px; height: 630px; left: 6px; top: 0px;" data-block-id="f53e7e480a2b230315e10deed8cca790"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1086" data-natural-height="722" data-src="why-you-should-be-using-jruby-in-production/3506739-visualvm.gif"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 637px; height: auto;" data-block-id="8b19dda12e967483af46a755dfb16402"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui">
+<h2>load up visualvm</h2>
+</div></div></section><section data-id="b8c90c2ddfc73fb8b7c485fc828dc2ca"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="0471d3176bb70c47075a8cdf54fbd31e"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>googling around</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 964px; height: 140px; left: -4px; top: 175px;" data-block-id="92ced2ff6284ef280fc410375bdd37a8"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="909" data-natural-height="132" data-src="why-you-should-be-using-jruby-in-production/3506746-github.png"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 960px; height: 165px; left: 0px; top: 350px;" data-block-id="e0d049fc9223060e0bc1d32fbcd196de"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="1160" data-natural-height="199" data-src="why-you-should-be-using-jruby-in-production/3506747-oops-api.png"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 78px; top: 539px; height: auto;" data-block-id="3eb10f6973ce0aedcca4432913f36101"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 14; font-size: 150%;" dir="ui" data-fragment-index="0">
+<h2>oops, we were using the gem wrong</h2>
+</div></div></section><section data-id="39965f3cc250d41e34f177d5b3385f04">
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 637px; height: auto;" data-block-id="24b73749acee0b3dc5f6a5d358fe70f7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>👍 fixed</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 958px; height: 637px; left: 2px; top: 0px;" data-block-id="4aca201693c71e5e65943398dfaa9a1b"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1086" data-natural-height="722" data-src="why-you-should-be-using-jruby-in-production/3506755-visualvm2.gif"></div></div></section><section data-id="6adeedf56b5f18404c43ea8f89cacdd2"><div class="sl-block" data-block-type="text" style="width: 898px; left: 32px; top: 44px; height: auto;" data-block-id="3157a041351b716369deab4a3497bab3"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; font-size: 150%;">
+<h1>v1: CPU-LIMITED? WAT?</h1>
+</div></div>
+
+
+
+
+
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 753px; height: 560px; left: 104px; top: 140px;" data-block-id="6a49f86825ddb06c1b8ec0b3aa854da5"><div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="0"><img style="" data-natural-width="1046" data-natural-height="778" data-src="why-you-should-be-using-jruby-in-production/3507162-jprofiler.png"></div></div></section><section data-id="7853a4c12c4bf6d29e04cbd63118056d">
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 490px; height: auto;" data-block-id="651dd2c32a90b8380c2360de629b7e78"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>THIS DOESN'T SEEM RIGHT...</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 919px; height: 171px; left: 21px; top: 265px;" data-block-id="3e33907ec318b547670edea01fb1db25"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="457" data-natural-height="85" data-src="why-you-should-be-using-jruby-in-production/3507164-Screenshot_from_2017-02-18_21-01-55.png"></div></div></section><section data-id="383f76e80d6f29332ee1d35bacd5bc94">
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 630px; height: auto;" data-block-id="b6e55bf8972e9a7ada7801e619e6e07e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>👍 fix merged upstream!</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 868px; height: 630px; left: 46px; top: 0px;" data-block-id="25ceb2623f1578598c61a66b5c405e0e"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="825" data-natural-height="599" data-src="why-you-should-be-using-jruby-in-production/3507175-Screenshot_from_2017-02-18_21-19-59.png"></div></div></section><section data-id="00de92081276d466c56be1bd4b4cab4d"><div class="sl-block" data-block-type="text" style="width: 858px; left: 52px; top: 44px; height: auto;" data-block-id="023551e55f1af570d6ec21938807f0f9"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; font-size: 150%;">
+<h1>v2: memory leaks :(</h1>
+</div></div>
+
+
+
+
+
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 888px; height: 369px; left: 36px; top: 166px;" data-block-id="4b6ae763cfaa3f8b7a7f405822a38834"><div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="0"><img style="" data-natural-width="1234" data-natural-height="513" data-src="why-you-should-be-using-jruby-in-production/3507202-Screenshot_from_2017-02-18_21-30-57.png"></div></div></section><section data-id="7f14f7b351a260246a08266ecc87981c">
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 637px; height: auto;" data-block-id="71ad909ee6ce4d43f6ff0e3aaae26d46"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 10; font-size: 150%;" dir="ui">
+<h2>load up visualvm</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 891px; height: 404px; left: 47px; top: 233px;" data-block-id="c7fe30615e27429fbba845368f5d4e38"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="834" data-natural-height="378" data-src="why-you-should-be-using-jruby-in-production/3507209-heap-dump.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 179px; height: 178px; left: 452px; top: 78px;" data-block-id="020623b8a778815c7c9b9a1b68479d99"><div class="sl-block-content fragment" data-shape-type="symbol-thin-arrow-down-right" data-shape-fill-color="#000000" data-shape-stretch="true" style="z-index: 15;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="4 4 24 24"><g class="shape-element" fill="#000000"><path d="M28 14c0-1.105-0.895-2-2-2s-2 0.895-2 2v7.172l-16.586-16.586c-0.781-0.781-2.047-0.781-2.828 0-0.391 0.391-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414l16.586 16.586h-7.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h14v-14z"></path></g></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 209px; height: 132px; left: 591px; top: 528px;" data-block-id="c4c9ea5ec31fde675505ef8a6a6c57b0"><div class="sl-block-content fragment" data-shape-type="circle" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 12;" data-shape-stroke-color="#ff0000" data-shape-stroke-width="8" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 209 132"><defs><clippath id="shape-mask-1-1487831722658"><ellipse rx="104.5" ry="66" cx="104.5" cy="66"></ellipse></clippath></defs><ellipse rx="104.5" ry="66" cx="104.5" cy="66" clip-path="url(#shape-mask-1-1487831722658)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#ff0000" stroke-width="16"></ellipse></svg></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 960px; height: 311px; left: 5px; top: -78px;" data-block-id="6d7cd3aceac1b1b1f772568780b254a9"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="928" data-natural-height="301" data-src="why-you-should-be-using-jruby-in-production/3507213-Screenshot_from_2017-02-18_21-36-51.png"></div></div></section><section data-id="0238bdc1a5613332c02dde53b2b76882">
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 637px; height: auto;" data-block-id="f84e3bd487229ce5529cfc671c960397"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>follow the breadcrumbs</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 925px; height: 630px; left: 18px; top: 0px;" data-block-id="f8d7c5c7d63c18bf332a1140c44d22c7"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="790" data-natural-height="538" data-src="why-you-should-be-using-jruby-in-production/3507243-references2.png"></div></div></section><section data-id="9a90212697423a795b9fb72323875a45">
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 637px; height: auto;" data-block-id="b8fec8982ac8bed13f8048b69aba2766"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>👍 fixED</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 960px; height: 284px; left: 0px; top: 208px;" data-block-id="6ac29f8ae763cf031199867321f023b9"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="782" data-natural-height="231" data-src="why-you-should-be-using-jruby-in-production/3507257-Screenshot_from_2017-02-18_21-50-08.png"></div></div></section><section data-id="e699f6527cd6d33acb312355bdae7f3d">
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 637px; height: auto;" data-block-id="e212174b3ffdc402f10c8dd74ff32037"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>👍 fixED</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 960px; height: 584px; left: 0px; top: 53px;" data-block-id="5e149f460a1e89d51a078456caaee39c"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="921" data-natural-height="560" data-src="why-you-should-be-using-jruby-in-production/3507250-Screenshot_from_2017-02-18_21-44-49.png"></div></div></section><section data-id="32f88009814aeb653f9a052d3f87c31d"><div class="sl-block" data-block-type="text" style="width: 888px; left: 36px; top: 44px; height: auto;" data-block-id="2c5cb00a8395da2aaa83d1fcbf2bcdf4"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>v2½: memory leaks :(</h1>
+</div></div>
+
+
+
+
+
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 960px; height: 379px; left: 0px; top: 181px;" data-block-id="69acec81ff6542f71a7e6d7d9775884d"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1038" data-natural-height="410" data-src="why-you-should-be-using-jruby-in-production/3507259-Screenshot_from_2017-02-18_21-53-32.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 209px; height: 132px; left: 0px; top: 140px;" data-block-id="e865a2e1f0cd175e692b174268a8af0c"><div class="sl-block-content" data-shape-type="circle" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 13;" data-shape-stroke-color="#ff0000" data-shape-stroke-width="8"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 209 132"><defs><clippath id="shape-mask-2-1487831723618"><ellipse rx="104.5" ry="66" cx="104.5" cy="66"></ellipse></clippath></defs><ellipse rx="104.5" ry="66" cx="104.5" cy="66" clip-path="url(#shape-mask-2-1487831723618)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#ff0000" stroke-width="16"></ellipse></svg></div></div></section><section data-id="46cf763b60d93c8160fe09e27c3f4236">
+
+
+
+
+
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 475px; height: 700px; left: 44px; top: 0px;" data-block-id="7f04667cd8568f4bd4796e95e3faa8a3"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="682" data-natural-height="1006" data-src="why-you-should-be-using-jruby-in-production/3507269-repro1.png"></div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 344px; height: 700px; left: 560px; top: 0px;" data-block-id="46011909bbd8ef0a2c3ba00614086024"><div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="0"><img style="" data-natural-width="663" data-natural-height="1350" data-src="why-you-should-be-using-jruby-in-production/3507270-repro2.png"></div></div></section><section data-id="a1a32c70174ff5c6a33084b06e3c1931">
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 459px; height: auto;" data-block-id="8b0aedaf4df3377173408e20e23b3d4d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui">
+<h2>3 DAYS LATER! :)</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 960px; height: 188px; left: 0px; top: 256px;" data-block-id="6190cfc4703430e3291912d25df407ce"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="703" data-natural-height="138" data-src="why-you-should-be-using-jruby-in-production/3507276-Screenshot_from_2017-02-18_22-01-17.png"></div></div></section><section data-id="0eb476d266a6ab4ec8e12cf8a1a208ed"><div class="sl-block" data-block-type="text" style="width: 858px; left: 52px; top: 44px; height: auto;" data-block-id="6ee53c403eb429629233e4c6f7fd3b3c"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>contacts importer</h1>
+</div></div>
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 160px; top: 207px; height: auto;" data-block-id="812cc1b61b98c590cfdb12068fafe64a"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%; text-align: center;" dir="ui" data-fragment-index="0">
+<h2>huge productivity boost</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 263px; height: 263px; left: 0px; top: 251px;" data-block-id="c97e8c5fb158d8e9a8605ebd989b3685"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="1200" data-natural-height="1200" data-src="why-you-should-be-using-jruby-in-production/3455545-jruby-logo-standard-logo-stroke-large.png"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 737px; left: 223px; top: 327px; height: auto;" data-block-id="6b749fc7dbf2098011bcb86f0aabee43"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 14; font-size: 150%; text-align: center;" dir="ui" data-fragment-index="1">
+<h2>wizard-level debugging MADE easy</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 874px; left: 86px; top: 490px; height: auto;" data-block-id="c3b5bb00dae34df878e50d0ad7003c28"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 15; font-size: 150%;" dir="ui" data-fragment-index="2">
+<h2>hit double our performance target on a single instance</h2>
+</div></div></section><section data-id="1288ccfdd62ab84e80e7c73a6fd21a6e"><div class="sl-block" data-block-type="text" style="width: 918px; left: 21px; top: 92px; height: auto;" data-block-id="cbabc660703467b4c6ae41d1ac783273"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1 style="text-align:left">
+<br>
+<br>
+<span style="color:#FF0000"><span style="font-size:1.4em">JRuby</span></span><br>
+101</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 360px; height: 360px; left: 600px; top: 170px;" data-block-id="606d851c427e177ddf0c620891b71308"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1200" data-natural-height="1200" data-src="why-you-should-be-using-jruby-in-production/3455545-jruby-logo-standard-logo-stroke-large.png"></div></div></section><section data-id="3100f3a90770822f163b9ea4e3fc4d08"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="622778ba558c83d10c1c333eef19dc42"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>in development</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 280px; height: auto;" data-block-id="779ddc9d3893e02e607e62d69a70dd93"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<pre style="text-align: center;">export JRUBY_OPTS=--dev</pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 420px; height: auto;" data-block-id="cbf2a762e45e2b8b0b6187f03e5018d9"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui">
+<pre style="text-align:center">bundle install --binstubs</pre>
+</div></div></section><section data-id="28ef870cf644576fd0e9cd75b1d9a9f8"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="5afb108a68a0debf45d2c6bac21f34f8"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>in development</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 591px; height: 210px; left: 185px; top: 280px;" data-block-id="3b7f420093ef2d7836c24c17b3761e42"><div class="sl-block-content" style="z-index: 12; font-size: 250%;" data-highlight-theme="solarized-light"><pre class="ruby"><code>gem 'pry-byebug',
+  platforms: :ruby
+gem 'pry-debugger-jruby',
+  platforms: :jruby</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 829px; left: 66px; top: 560px; height: auto;" data-block-id="df6204af37df6ea04b6dd5d3921bee97"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 13; font-size: 150%;" dir="ui">
+<pre style="text-align:center">export JRUBY_OPTS="--dev --debug"</pre>
+</div></div></section><section data-id="c2e9b94de02d72eb9b94407f3f2eb833"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="c4b332a1b645d3abd19b0fa5911e54a1"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>in development</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="code" style="width: 803px; height: 560px; left: 79px; top: 140px;" data-block-id="4ca1d653edc1919245478f6d7646e00e"><div class="sl-block-content" style="z-index: 11; font-size: 250%;" data-highlight-theme="solarized-light"><pre class="ruby"><code>gem 'multi_json'
+gem 'oj', platforms: :ruby
+gem 'jrjackson', platforms: :jruby
+
+if RUBY_PLATFORM == 'java'
+  require 'jrjackson'
+  MultiJson.use :jr_jackson
+else
+  require 'oj'
+  MultiJson.use :oj
+end
+</code></pre></div></div></section><section data-id="ee4759a7e392ce68c9036524a5938313"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="fa6241c025ae7c7d7ccfa4543ad4ede1"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; font-size: 150%;">
+<h1>in development</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 630px; height: auto;" data-block-id="4f07b7e59b0a0afd642d74fef6957d8c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 13; font-size: 150%;" dir="ui">
+<h2>jruby-lint</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 960px; left: 0px; top: 166px;" data-block-id="ae679a3e5b3e9364906ee49c2d177deb"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;" data-fragment-index="0">
+<pre><strong>./Gemfile:24: [gems, warning]</strong> Found gem 'oj' which is reported to have some issues:
+Try gson, json or json_pure instead.
+Try any one of the following JRuby-based servers: Trinidad, Mizuno, Kirk or Puma (though make sure to use the JRuby-native version of the gem).
+<strong>./Gemfile:43: [gems, warning]</strong> Found gem 'bson_ext' which is reported to have some issues:
+bson_ext isn't used with JRuby. Instead, some native Java extensions are bundled with the bson gem.
+<strong>./app/controllers/api/user_controller.rb:25: [nonatomic, warning]</strong> Non-local operator assignment is not guaranteed to be atomic</pre>
+</div></div></section><section data-id="472aadf9eba77f54f3cf8dcb8cf19e1e"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="6382f041eec00392526476b1b5862b4b"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>in development</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 350px; height: auto;" data-block-id="d04b7f8fe3c29984416bddf024a0cee7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui">
+<h2>concurrent-ruby<br>
+is your friend</h2>
+</div></div></section><section data-id="c10c049a3e854570ed759b7a2f6ce672"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="d8bfa7ef11dbe7fb93c7056ff9cd8349"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>in development</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 630px; height: auto;" data-block-id="69880eb2b0acea05d3b00b1ddd9cf588"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>visualvm</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 656px; height: 490px; left: 152px; top: 140px;" data-block-id="87b668662784306e19bf073831d805f2"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="805" data-natural-height="601" data-src="why-you-should-be-using-jruby-in-production/3517441-visualvm.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 408px; height: 74px; left: 400px; top: 198px;" data-block-id="85c2630d4dd96a111e0dbb9f91e22b7d"><div class="sl-block-content fragment" data-shape-type="circle" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 13;" data-shape-stroke-color="#ff0000" data-shape-stroke-width="8" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 408 74"><defs><clippath id="shape-mask-3-1487832285216"><ellipse rx="204" ry="37" cx="204" cy="37"></ellipse></clippath></defs><ellipse rx="204" ry="37" cx="204" cy="37" clip-path="url(#shape-mask-3-1487832285216)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#ff0000" stroke-width="16"></ellipse></svg></div></div></section><section data-id="5062fe9b7ef498f268ad129d582bdd07"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="1af1da8ea34e61dcee6134d39d473afd"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; font-size: 150%;">
+<h1>in development</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 630px; height: auto;" data-block-id="6e529eae89995858d0dad28929d7eb33"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui">
+<h2>netbeans profiling</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 580px; height: 490px; left: 190px; top: 140px;" data-block-id="647acdd53985132bb8d34ff2f2703587"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="1000" data-natural-height="845" data-src="why-you-should-be-using-jruby-in-production/3517503-netbeans.png"></div></div></section><section data-id="5dfea2ce27a708f57b64f8068f4d41c9"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="aebd0ccd4b78df95a83d7ce35d144f21"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>in development</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 630px; height: auto;" data-block-id="c0427a2a12a182513ea60f347dd3e8b7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 150%;" dir="ui">
+<h2>jmap/jstack</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 912px; height: 307px; left: 24px; top: 253px;" data-block-id="43c9d5a37784984df3dedb6965ae2685"><div class="sl-block-content" data-highlight-theme="solarized-light" style="z-index: 12; font-size: 133%;"><pre class="ruby"><code>$ jmap -histo 17118 | grep rubyobj
+  17:          9000         288000  rubyobj.Example.A
+ 337:            98           3136  rubyobj.Gem.Requirement
+ 435:            52           1664  rubyobj.Gem.Dependency
+ 470:            42           1344  rubyobj.OtherStuff.B
+ 477:            41           1312  rubyobj.Gem.Version
+ 762:            13            416  rubyobj.Gem.Specification
+1103:             6            192  rubyobj.Gem.Platform
+4060:             1             32  rubyobj.Gem.PathSupport
+4061:             1             32  rubyobj.Gem.StubSpecification
+4062:             1             32  rubyobj.Gem.StubSpecification.StubLine
+4063:             1             32  rubyobj.Monitor</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 164px; height: auto;" data-block-id="32fd569e5e40a85d0c3ea559803c5a31"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 15; font-size: 138%;" dir="ui">
+<pre style="text-align:center">export JRUBY_OPTS="-Xreify.classes=true"</pre>
+</div></div></section><section data-id="a7d69f047253a3322118b140c3562a03"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="9b852ea7c8869a21613fc6206c679bb6"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; font-size: 150%;">
+<h1>in development</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 630px; height: auto;" data-block-id="5ab6c5c2202274bf3025d1cfea1e258f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui">
+<h2>yourkit &amp; jprofiler</h2>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 960px; height: 400px; left: 0px; top: 160px;" data-block-id="007638f266469bce5a3ad7944224cb2e"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="552" data-natural-height="230" data-src="why-you-should-be-using-jruby-in-production/3517546-ezgif-1-371f1375c2.gif"></div></div></section><section data-id="91049c2be89dfd95114a915ba0120350"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="a31697b4f7dfacab3d3f36a9102d0255"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>in production</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 257px; height: auto;" data-block-id="d642eda99a74feb61f0a20b2903cc430"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11; font-size: 138%;" dir="ui">
+<pre style="text-align:center">export JRUBY_OPTS=\
+"-Xcompile.invokedynamic=true -Xmanagement.enabled=true"</pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 444px; height: auto;" data-block-id="e43968f6961ee33c2dbfafdf9d089a52"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 13; font-size: 138%;" dir="ui">
+<pre style="text-align:center">export JAVA_OPTS=\
+"-Xmx3g -XX:+PrintGCDetails"</pre>
+</div></div></section><section data-id="66fcc94eb625424803a487ac4352f60d"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="39f8ff65bda9a7ec1a5a49bafecd6025"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; font-size: 150%;">
+<h1>in production</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 188px; height: auto;" data-block-id="e2bddfd91eacc50b6790655c8e438ce0"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 138%;" dir="ui">
+<pre style="text-align:center">export JAVA_OPTS=\
+"-Xss512k -Xmx500m -XX:ReservedCodeCacheSize=90m -XX:InitialCodeCacheSize=90m -XX:MaxMetaspaceSize=120m -XX:+PrintGCDetails
+-XX:+PrintCodeCache"</pre>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 560px; height: auto;" data-block-id="86fdd4e0887495a0913b0fce5f740120"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 13; font-size: 150%;" dir="ui">
+<h2>needs some tuning for smaller machines :/</h2>
+</div></div></section><section data-id="c55c2c98d79096797ecf9d728f6664f2"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 44px; height: auto;" data-block-id="2673c8fe2988a50da3c45aa839cd9915"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; font-size: 150%;">
+<h1>in production</h1>
+</div></div>
+
+
+
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 467px; height: 560px; left: 247px; top: 140px;" data-block-id="1700c61c793fa906b569e0c7eb027816"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="1125" data-natural-height="1350" data-src="why-you-should-be-using-jruby-in-production/3517573-jkdepj2.jpg"></div></div></section><section data-id="7b0b7910188af04471e593f5698becc7"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 302px; height: auto;" data-block-id="53ac19a6a4152c372338562fec7f77bf"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; font-size: 150%;">
+<h1>THANKS!</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 459px; height: auto;" data-block-id="faae34cdeb85633bc7cc456cb5e29455"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12; font-size: 150%;" dir="ui">
+<h2>TWITTERS: @KNUX</h2>
+</div></div>
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 529px; height: auto;" data-block-id="ee366e7842569f3dea9e61fe9713227f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 13; font-size: 150%;" dir="ui">
+<h2>BLOG: ivoanjo.me</h2>
+</div></div></section>
+			</div>
+		</div>
+
+		<script>
+			var SLConfig = {"deck": {"id":913523,"slug":"why-you-should-be-using-jruby-in-production","title":"Why you should be using JRuby in production","description":"Presentation for Fullstack KX meetup, 23 February 2017","width":960,"height":700,"visibility":"all","published_at":"2017-02-14T22:28:49.220Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/c0726c50c25e20cb7a50aa59e53ef70d/thumb.jpg","view_count":2,"user":{"id":15154,"username":"ianjo","name":"Ivo Anjo","description":"","thumbnail_url":"https://www.gravatar.com/avatar/c49aa35cd71dd53807d52cdc6995289b?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":true,"pro":false,"lite":true,"team_id":null,"settings":{"id":350315,"present_controls":false,"present_upsizing":true,"present_notes":false}},"background_transition":"slide","transition":"fade","theme_id":null,"theme_font":"overpass2","theme_color":"beige-brown","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"should_loop":false,"share_notes":true,"slide_number":false,"rtl":false,"version":2,"collaborative":false,"deck_user_editor_limit":1,"data_updated_at":1487838146182,"font_typekit":null,"font_google":null,"notes":{"cbb10156db09ea4c5050f0bd03e1bb6b":"MRI created by Yukihiro \"Matz\" Matsumoto\n\nMRI defines what ruby is --- if you do it like MRI you are \"correct\", if you don't , you are \"wrong\"","f9224b89d142d4ad2661447d6955c170":"Also follow my random ruby blog @ ivoanjo.me","c0f06c8c48ab74f6430f06434e822a66":"Up until 1.8, MRI had\n\na simple AST interpreter\n* builds syntactic tree from code\n* executes code by walking tree","5232578696ea7679ef250576a2d9b7b7":"YARV\n* builds syntactic tree\n* walks tree, converting to yarv bytecode\n* interprets bytecode\n\nZendesk: https://www.zendesk.com/blog/upgrade-the-road-to-1-9","0f7e0264dd469ccc12301318fe8d2e4a":"* RGENGC divides heap into new / old generation\n* collects old generation less often","edf45495fb9ed06af177f5e665cbcc6a":"* incremental GC reduces reduces GC pauses by doing GC work upfront interleaved with app work\n\n* Yes! up until 2.2, creating symbols would leak memory","25e0e66ffb3991775d37fa420d9b3e26":"","7c768ccfb9e783aaf59348af4bf8bdce":"Faster than MRI **after warmup**","4a0bb033c391bb7a807693edcee9ef64":"ninja .jar/.war:\n\n* nobody will know you're not running java\n* easy ruby app distribution\n","391fa9068c1235f02226a1536d8ec525":"jruby developers have plans to implement \n\n* deoptimization\n* to use graal compiler","b48d591267b980ea05e8f3427330e56c":"* ruby 2.4 \"coming soon\"\n* alternatives for most C extensions; can also use FFI (typhoeous)\n* no gil: also a disadvantage","bb738cf712221a5fb2bb627b76c1f919":"Compacting GC: Move objects, reduce fragmentation\n\nSeparate heaps: By having shared unchanged objects in the same memory pages, COW on fork is even more efficient\n\n---\nCompacting GC: https://twitter.com/tenderlove/status/804880503765487616\nRegions: https://blog.heroku.com/ruby-3-by-3/","936377d467c27671717cb6c0459d3256":"Did you know? There was already an attempt at a MRI tracing JIT, called RuJIT, but it was abandoned","9441bc96f61157ef75258e257b600428":"Java 9 is still in development with the target release date of 27 of July (2017)","240ada2e452a78c20cd84b402669ce57":"For this to work, you need to enable the reify variables option, which is off by default.\n\nAsk me/see my blog for details: http://ivoanjo.me/blog/2016/07/17/another-round-of-jruby-goodness/#you-can-also-use-good-olvisualvm","30863aa5e8cf6efe65b958c16dc8a692":"GC:\n* G1GC\n* Azul Pauseless\n* Parallel+concurrent","5dfea2ce27a708f57b64f8068f4d41c9":"Can even be used on heroku: https://devcenter.heroku.com/articles/java-memory-issues (don't forget to add the buildpack)","28ef870cf644576fd0e9cd75b1d9a9f8":"Note that --dev speeds up start-up at the cost of steady-state execution time, and --debug slows down execution time even more.","2b7ccdb0ecee92a694175cd738be65eb":"DSLs: Sonic PI uses ruby dsl to livecode music"}}};
+			SLConfig.current_user = {
+				name: "Ivo Anjo",
+				username: "ianjo",
+				pro: true
+			};
+
+
+			// Use the local font path
+			SLConfig.fonts_url = 'lib/fonts/';
+		</script>
+
+		<script src="lib/head.min.js"></script>
+		<script src="lib/reveal.min.js"></script>
+		<script src="lib/offline.js"></script>
+		<script>
+			// Make Slides speaker notes available in the reveal.js speaker view
+			if( SLConfig.deck.notes ) {
+				[].forEach.call( document.querySelectorAll( '.reveal .slides section' ), function( slide ) {
+
+					var value = SLConfig.deck.notes[ slide.getAttribute( 'data-id' ) ];
+					if( value && typeof value === 'string' ) {
+						slide.setAttribute( 'data-notes', value );
+					}
+
+				} );
+			}
+
+			Reveal.initialize({
+				width: SLConfig.deck.width,
+				height: SLConfig.deck.height,
+
+				margin: 0.05,
+				controls: true,
+				progress: true,
+				history: true,
+				mouseWheel: false,
+				showNotes: SLConfig.deck.share_notes,
+				slideNumber: SLConfig.deck.slide_number,
+
+				autoSlide: SLConfig.deck.auto_slide_interval || 0,
+				autoSlideStoppable: true,
+
+				rolling_links: SLConfig.deck.rolling_links || true,
+				center: SLConfig.deck.center || false,
+				loop: SLConfig.deck.should_loop || false,
+				rtl: SLConfig.deck.rtl || false,
+
+				transition: SLConfig.deck.transition,
+				backgroundTransition: SLConfig.deck.background_transition,
+
+				dependencies: [
+					{ src: 'lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlighting(); hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+
+		
+
+	</body>
+</html>
