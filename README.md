@@ -1,5 +1,7 @@
 # talks
 
+[![Join the chat at https://gitter.im/fullstacklx/talks](https://badges.gitter.im/fullstacklx/talks.svg)](https://gitter.im/fullstacklx/talks?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is the place to submit talks for Fullstack LX meetups.
 
 ## How to submit
