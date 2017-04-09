@@ -16,3 +16,7 @@
 - Front-end Performance: Back to basics by [Fábio Santos](https://github.com/fabiosantoscode) >>> [slides](https://perftalk-xygubaauau.now.sh/) | [video](https://www.youtube.com/watch?v=fgUnjlwTzB4)
 - Why you should be using JRuby in production by [Ivo Anjo](https://github.com/ivoanjo) >>> [slides](http://slides.com/ianjo/why-you-should-be-using-jruby-in-production) | [video](https://www.youtube.com/watch?v=nz2-_06OWzM)
 
+## 4th Edition
+
+- From mobile to consoles, an look at being a solo indie game dev by [David Amador](https://twitter.com/DJ_Link) >>> [slides](http://slides.com/slides_user987/deck#/) | video
+- From 4 RPS to 200+ RPS in 90 minutes - Optimizing your Web application by [Nuno Caneco](https://twitter.com/nunocaneco) >>> [slides](https://www.slideshare.net/ncaneco/fullstack-lx-improving-your-application-performance) | video
